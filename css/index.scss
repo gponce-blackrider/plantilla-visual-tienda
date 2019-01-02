@@ -283,6 +283,16 @@
     src: local('Roboto Bold'), local('Roboto-Bold'), url(https://fonts.gstatic.com/s/roboto/v18/KFOlCnqEu92Fr1MmWUlfBBc4.woff2) format('woff2');
     unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
   }
+
+/*
+variables
+*/
+$color-fp-tema: #4fbfa8;
+$color-lp-contraste-tema: #212529;
+$color-fp-tema-hover: #3eaa94;
+$color-lp-contraste-tema-hover: #ffffff;
+/*--fin de las variables*/
+
 *{
     box-sizing: border-box;
     &::after, &::before{
@@ -294,7 +304,7 @@ body{
     font-size: 0.9rem;
     font-weight: 400;
     line-height: 1.5;
-    color: #212529;
+    color: $color-lp-contraste-tema;
     background-color: #f0f0f0;
     margin: 0px;
 }
@@ -336,12 +346,233 @@ h5{
 }
 
 a.link{
-    color: #4fbfa8;
+    color: $color-fp-tema;
     text-decoration: none;
     &:hover,&:focus{
         text-decoration: underline;
-        color: #348e7b;
+        color: $color-fp-tema-hover;
     }
+}
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0,0,0,0);
+  border: 0;
+  white-space: nowrap;
+}
+.no-mobil{display: none;}
+
+
+.encabezado-pagina{
+  margin-bottom: 3rem;
+  &>div.cintillo{
+    background: #555;
+    padding: 10px 0;
+    .contenedor{
+      max-width: 1140px;
+      width: 100%;
+      padding-right: 15px;
+      padding-left: 15px;
+      margin-right: auto;
+      margin-left: auto;
+      .renglon{
+        display: -ms-flexbox;
+        display: flex;
+        -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+        margin-right: -15px;
+        margin-left: -15px;
+        .oferta-del-dia{
+          color: #fff;
+          margin-bottom: 0;
+          max-width: 50%;
+          position: relative;
+          width: 100%;
+          min-height: 1px;
+          padding-right: 15px;
+          padding-left: 15px;
+          a.texto{
+            color:#fff;
+            text-decoration: none;
+            &:hover{
+              text-decoration: underline;
+            }
+          }
+        }
+        .ligas{
+          margin-bottom: 0;
+          max-width: 50%;
+          position: relative;
+          width: 100%;
+          min-height: 1px;
+          padding-right: 15px;
+          padding-left: 15px;
+          text-align: right;
+          ul{
+            padding: 5px 0 0 0;
+            margin: 0;
+            font-size: 0.738rem;
+            li{
+              margin-right: 0;
+              display: inline-block;
+              &.con-separador:before{
+                content: "|\00a0";
+                padding: 0 5px;
+                color: #f8f9fa;
+              }
+              a{
+                color: $color-lp-contraste-tema-hover;
+                text-decoration: none;
+                &:hover{
+                  text-decoration: underline;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .seccion-barra-busqueda{
+    .contenedor{
+      width: 100%;
+      max-width: 1140px;
+      margin-right: auto;
+      margin-left: auto;
+      padding: 5px 15px;
+    }
+  }
+  .navbar{
+    padding: 0 1rem;
+    border-bottom: 1px solid #e6e6e6;
+    background-color: #fff;
+    position: relative;
+    display: block;
+
+    .contenedor{
+      width: 100%;
+      max-width: 1140px;
+      padding-right: 15px;
+      padding-left: 15px;
+      margin-right: auto;
+      margin-left: auto;
+
+      display: flex;
+      flex-wrap: nowrap;
+      align-items: center;
+      justify-content: space-between;
+
+
+      .home{
+        width: 140px;
+        padding-top: 0.33125rem;
+        padding-bottom: 0.33125rem;
+        margin-right: 1rem;
+        font-size: 1.125rem;
+        .logo{
+          max-width: 100%;
+          height: auto;
+        }
+      }
+      .botones-mobil{
+        display: none;
+      }
+      .navegacion-colapsable{
+        display: flex!important;
+        flex-basis: auto;
+        flex-grow: 1;
+        align-items: center;
+
+        
+        .opciones-principales{
+          position: relative;
+          margin: 0 0 75px 0;
+          display: flex;
+          flex-direction: row;
+          padding-left: 0;
+          margin-bottom: 0;
+          list-style: none;
+          margin-right: auto;
+
+          .opcion{
+            display: inline-block;
+            a{
+              display: block;
+              text-transform: uppercase;
+              letter-spacing: 0.1em;
+              font-weight: 700;
+              padding: 30px 15px !important;
+              color: #555;
+              text-decoration: none;
+              &.actual{
+                background: $color-fp-tema;
+                color: $color-lp-contraste-tema-hover;
+              }
+              &:hover{
+                background: $color-fp-tema;
+                color: $color-lp-contraste-tema-hover;
+              }
+            }
+          }
+          .deptos{
+            a:nth-child(1):after{
+              display: inline-block;
+              width: 0;
+              height: 0;
+              margin-left: .255em;
+              vertical-align: .255em;
+              content: "";
+              border-top: .3em solid;
+              border-right: .3em solid transparent;
+              border-bottom: 0;
+              border-left: .3em solid transparent;
+            }
+          }
+        }
+
+        .links-extra-menu{
+          a{
+            text-decoration: none;
+            color: $color-lp-contraste-tema-hover;
+          }
+        }
+      }      
+    }
+    .contenedor-deptos{
+      width: 100%;
+      max-width: 1140px;
+      padding-right: 15px;
+      padding-left: 15px;
+      margin-right: auto;
+      margin-left: auto;
+
+      .lista-deptos{
+        display: block;
+        background-color: $color-fp-tema;
+        color: $color-lp-contraste-tema-hover;
+        width: 100%;
+        padding: 0;
+        margin: 0;
+        
+        li{
+          padding: 15px;
+          display: inline-block;
+          cursor: pointer;
+          &:hover{
+            background-color: $color-fp-tema-hover;
+          }
+        }
+      }
+      .departamento-desplegable{
+        display: none;
+      }
+    }
+  }
 }
 
 .pie-de-pagina{
@@ -436,7 +667,7 @@ a.link{
             text-align: right;
             padding: 0 15px 0 0;
             a.impulsado{
-                color: #4fbfa8;
+                color: $color-fp-tema;
                 text-decoration: none;
             }
         }
@@ -504,16 +735,40 @@ a.link{
     transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out;
 }
 
+.btn-oferta{
+  display: inline-block;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: #fff;
+  padding: 0.25rem 0.5rem;
+  font-size: 0.738rem;
+  line-height: 1.5;
+  border-radius: 0.2rem;
+  background-color: #28a745;
+  border-color: #28a745;
+  font-weight: 400;
+  border: 1px solid transparent;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  text-decoration: none;
+  &:hover{
+    color: #fff;
+    background-color: #218838;
+    border-color: #1e7e34;
+  }
+}
+
 .btn-primary {
-    color: #212529;
-    background-color: #4fbfa8;
-    border-color: #4fbfa8;
+    color: $color-lp-contraste-tema-hover;
+    background-color: $color-fp-tema;
+    border-color: $color-fp-tema;
   }
   
   .btn-primary:hover {
-    color: #fff;
-    background-color: #3eaa94;
-    border-color: #3aa18c;
+    color: $color-lp-contraste-tema-hover;
+    background-color: $color-fp-tema-hover;
+    border-color: $color-fp-tema-hover;
   }
   
   .btn-primary:focus, .btn-primary.focus {
@@ -522,16 +777,16 @@ a.link{
   }
   
   .btn-primary.disabled, .btn-primary:disabled {
-    color: #212529;
-    background-color: #4fbfa8;
-    border-color: #4fbfa8;
+    color: $color-lp-contraste-tema;
+    background-color: $color-fp-tema;
+    border-color: $color-fp-tema;
   }
   
   .btn-primary:not(:disabled):not(.disabled):active, .btn-primary:not(:disabled):not(.disabled).active,
   .show > .btn-primary.dropdown-toggle {
-    color: #fff;
-    background-color: #3aa18c;
-    border-color: #379783;
+    color: $color-lp-contraste-tema-hover;
+    background-color: $color-fp-tema-hover;
+    border-color: $color-fp-tema-hover;
   }
   
   .btn-primary:not(:disabled):not(.disabled):active:focus, .btn-primary:not(:disabled):not(.disabled).active:focus,
@@ -565,16 +820,16 @@ a.link{
 
 
   .btn-outline-primary {
-    color: #4fbfa8;
+    color: $color-fp-tema;
     background-color: transparent;
     background-image: none;
-    border-color: #4fbfa8;
+    border-color: $color-fp-tema;
   }
   
   .btn-outline-primary:hover {
-    color: #fff;
-    background-color: #4fbfa8;
-    border-color: #4fbfa8;
+    color: $color-lp-contraste-tema-hover;
+    background-color: $color-fp-tema;
+    border-color: $color-fp-tema;
   }
   
   .btn-outline-primary:focus, .btn-outline-primary.focus {
@@ -583,15 +838,15 @@ a.link{
   }
   
   .btn-outline-primary.disabled, .btn-outline-primary:disabled {
-    color: #4fbfa8;
+    color: $color-fp-tema;
     background-color: transparent;
   }
   
   .btn-outline-primary:not(:disabled):not(.disabled):active, .btn-outline-primary:not(:disabled):not(.disabled).active,
   .show > .btn-outline-primary.dropdown-toggle {
-    color: #212529;
-    background-color: #4fbfa8;
-    border-color: #4fbfa8;
+    color: $color-lp-contraste-tema;
+    background-color: $color-fp-tema;
+    border-color: $color-fp-tema;
   }
   
   .btn-outline-primary:not(:disabled):not(.disabled):active:focus, .btn-outline-primary:not(:disabled):not(.disabled).active:focus,
@@ -645,8 +900,49 @@ a.link{
     z-index: 2;
 }
 /*formularios*/
+@media all and (max-width:1200px){
+  .encabezado-pagina{
+    margin-bottom: 3rem;
+    &>div.cintillo{
+      background: #555;
+      padding: 10px 0;
+      .contenedor{
+        max-width: 960px;
+      }
+    }
+  }
+}
 
 @media all and (max-width:989px){
+  .encabezado-pagina{
+    margin-bottom: 3rem;
+    &>div.cintillo{
+      background: #555;
+      padding: 10px 0;
+      .contenedor{
+        max-width: 720px;
+        .renglon{
+          .oferta-del-dia{
+            text-align: center;
+            max-width: 100%;
+            margin-bottom: 1rem;
+          }
+          .ligas{
+            text-align: center;
+            max-width: 100%;
+          }
+        }
+      }
+    }
+
+    .navbar{
+      .contenedor{
+        .botones-mobil{
+          display: block;
+        }
+      }
+    }
+  }
     .pie-de-pagina{
         .contenedor{
             max-width: 768px;

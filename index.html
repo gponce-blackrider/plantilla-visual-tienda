@@ -6,11 +6,150 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Tienda</title>
+    <meta name="description" content="plantilla de un ecommerce">
     <link href="css/index.min.css" rel="stylesheet" type="text/css" />
+    <!-- Favicon-->
+    <link rel="shortcut icon" href="imagenes/favicon.png">
 </head>
 
 <body>
-    <header></header>
+    <header class="encabezado-pagina">
+        <!--*** TOPBAR ***_________________________________________________________-->
+        <div id="top" class="cintillo">
+            <div class="contenedor">
+                <div class="renglon">
+                    <div class="oferta-del-dia">
+                        <a href="#" class="btn-oferta">Oferta del día</a>
+                        <a href="#" class="texto">&nbsp;¡ 50% de descuento en papel !</a>
+                    </div>
+                    <div class="ligas">
+                        <ul>
+                            <li><a href="#" data-toggle="modal" data-target="#login-modal">Ingresar</a></li>
+                            <li class="con-separador"><a href="register.html">Registro</a></li>
+                            <li class="con-separador"><a href="contact.html">Contactanos</a></li>
+                            <li class="con-separador"><a href="#">Visto recientemente</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="busqueda" class="seccion-barra-busqueda">
+            <div class="contenedor">
+                <form role="search">
+                    <div class="input-group">
+                        <input type="text" placeholder="Search" class="form-control">
+                        <div class="input-group-append">
+                            <button type="button" class="btn btn-primary"><i class="fa fa-search"></i></button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <!-- *** TOP BAR END ***-->
+        <nav class="navbar">
+            <div class="contenedor">
+                <a href="index.html" class="home">
+                    <img src="imagenes/logo.png" alt="Obaju logo" class="logo">
+                    <span class="sr-only">Tienda - ir a p&aacute;gina de inicio</span>
+                </a>
+                <div class="botones-mobil">
+                    <button type="button" data-toggle="collapse" data-target="#navegacion" class="btn btn-outline-secondary">
+                        <span class="sr-only">navegaci&oacute;n mobil</span>
+                        <i class="fa fa-align-justify"></i>
+                    </button>
+                    <button type="button" data-toggle="collapse" data-target="#busqueda" class="btn btn-outline-secondary">
+                        <span class="sr-only">busqueda mobil</span>
+                        <i class="fa fa-search"></i>
+                    </button>
+                    <a href="resumen-carrito.html" class="btn btn-outline-secondary">
+                        <i class="fa fa-shopping-cart"></i>
+                    </a>
+                </div>
+                <div id="navegacion" class="navegacion-colapsable">
+                    <ul class="opciones-principales">
+                        <li class="opcion"><a href="index.html" class="actual">Inicio</a></li>
+                        <li class="opcion deptos"><a href="javascript:desplegar_menu();" onmouseover="desplegar_menu();">Departamenos</a></li>
+                        <li class="opcion"><a href="blog.html">Blog</a></li>
+                        <li class="opcion"><a href="sucursales.html">Sucursales</a></li>
+                        <li class="opcion"><a href="promociones.html">Promociones</a></li>
+                    </ul>
+                    <div class="links-extra-menu">
+                        <a href="basket.html" class="btn btn-primary">
+                            <i class="fa fa-shopping-cart"></i>
+                            <span>3 productos</span>
+                        </a>
+                    </div>
+
+                </div>
+
+            </div>
+            <div class="contenedor-deptos">
+                <ul class="lista-deptos">
+                    <li>Papel</li>
+                    <li>Arte y diseño</li>
+                    <li>Escolar</li>
+                    <li>Oficina</li>
+                    <li>Escritura Fina</li>
+                    <li>Manualidades</li>
+                    <li>Tecnolog&iacute;a</li>
+                    <li>Regalos</li>
+                    <li>Mobiliario</li>
+                    <li>Contenedores</li>
+                </ul>
+                <div class="departamento-desplegable">
+                    <div class="renglon">
+                        <div class="columna">
+                            <h5>Papel Impresión</h5>
+                            <ul>
+                                <li><a href="category.html">Multiusos</a></li>
+                                <li><a href="category.html">Para transfer</a></li>
+                                <li><a href="category.html">Offset digital</a></li>
+                            </ul>
+                            <h5>Envoltura y decorativo</h5>
+                            <ul>
+                                <li><a href="category.html">Papel fantasia</a></li>
+                                <li><a href="category.html">Artes gráficas</a></li>
+                                <li><a href="category.html">Artísticos</a></li>
+                            </ul>
+                        </div>
+                        <div class="columna">
+                            <h5>Envoltura y decorativo</h5>
+                            <ul>
+                                <li><a href="category.html">Papel fantasia</a></li>
+                                <li><a href="category.html">Artes gráficas</a></li>
+                                <li><a href="category.html">Artísticos</a></li>
+                            </ul>
+                            <h5>Envoltura y decorativo</h5>
+                            <ul>
+                                <li><a href="category.html">Papel fantasia</a></li>
+                                <li><a href="category.html">Artes gráficas</a></li>
+                                <li><a href="category.html">Artísticos</a></li>
+                            </ul>
+                        </div>
+                        <div class="columna">
+                            <h5>Envoltura y decorativo</h5>
+                            <ul>
+                                <li><a href="category.html">Papel fantasia</a></li>
+                                <li><a href="category.html">Artes gráficas</a></li>
+                                <li><a href="category.html">Artísticos</a></li>
+                            </ul>
+                            <h5>Envoltura y decorativo</h5>
+                            <ul>
+                                <li><a href="category.html">Papel fantasia</a></li>
+                                <li><a href="category.html">Artes gráficas</a></li>
+                                <li><a href="category.html">Artísticos</a></li>
+                            </ul>
+                        </div>
+                        <div class="columna no-mobil">
+                            <img src="imagenes/menu/papel.jpg" class="imagen-menu" alt="marca imagen">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div>
+    </div>
     <footer class="pie-de-pagina">
         <div class="contenedor">
             <div class="columna">
@@ -92,7 +231,8 @@
         <div class="contenedor">
             <div class="izquierda">2018 Gonzalo Ponce</div>
             <div class="derecha">
-                Este sitio es impulsado por el poder de <a class="impulsado" href="https://www.python.org/" target="_blank" rel="noopener noreferrer">Python</a>
+                Este sitio es impulsado por el poder de <a class="impulsado" href="https://www.python.org/" target="_blank"
+                    rel="noopener noreferrer">Python</a>
             </div>
         </div>
     </div>
